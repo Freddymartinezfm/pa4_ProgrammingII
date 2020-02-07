@@ -16,38 +16,22 @@ int main(int argc, char** argv){
 		if (!inFile.good())
 			std::cerr << "Error opening file " << std::endl;
 
-		Employee* emp[MAX_CAPACITY];
-		Employee onTheStack;
-		Employee *onTheHeap = new Employee();
-
-
-		DB *db = new DB;
-		for (int i =0; i < MAX_CAPACITY; i++) emp[i] = nullptr;
-		int count = 0;
+		DB *db = new DB();
+		
 		if (!inFile.fail()){
 			std::string input;
 			while (std::getline(inFile, input)){
 				if (input != " "){
 					db->insert(input);
-					
-					// emp[count++] = new Employee(input);
 				}	
 			}	
 		}
 		inFile.close();
+		db->print(std::cout);
 
-		for (int i =0; i < MAX_CAPACITY; i++){
-			std::cout << "size: " << emp[i]->getEmpSize() << " ";
-			// emp[i]->display(std::cout);
-			db[i].print(std::cout);
-		}
+		delete db;
 
 		
-
-		onTheHeap->setFirst("==heapfirst==");
-		std::cout << onTheHeap->getFirst() << std::endl;
-
-		onTheStack.setFirst("==stackfirst==");
-		std::cout << onTheStack.getFirst() << std::endl;
+		
 		
 }

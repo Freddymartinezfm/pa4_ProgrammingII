@@ -13,15 +13,40 @@ DB::DB(){
 }
 
 void DB::insert(const std::string& entry){
-	
-	frontNode = new Node(entry, this->frontNode);
-
-	
+	if (frontNode == nullptr){
+		frontNode = new Node(entry, this->frontNode); // empty
+		this->frontNode = frontNode;
+	} else {
+		frontNode = new Node(entry, this->frontNode);
+	}
+	size++;
 }
 
 void DB::print(std::ostream& os){
-	while (frontNode != nullptr){
-		frontNode->emp->display(os);
-		frontNode = frontNode->next;
+	bool keepGoing = true;
+	Node *t = frontNode;
+	while (frontNode != nullptr && keepGoing){
+		t->emp->display(os);
+		if (t->next == nullptr) keepGoing = false;
+		t = t->next;
 	}
+}
+
+
+DB::~DB(){
+	const std::string mTAG {"~DB()"};
+
+	bool keepGoing = true;
+	Log::m(TAG, mTAG, this);
+	while (frontNode != nullptr && keepGoing){
+		Node *to_delete = frontNode;
+		if (frontNode->next == nullptr) keepGoing = false;
+		
+		frontNode = frontNode->next;
+		delete to_delete;
+		to_delete = nullptr;
+	} 
+
+	
+
 }
