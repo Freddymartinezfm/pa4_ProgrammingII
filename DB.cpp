@@ -59,6 +59,7 @@ void DB::print(std::ostream& os){
 		if (t->next == nullptr) keepGoing = false;
 		t = t->next;
 	}
+	menu.line(103);
 }
 
 
