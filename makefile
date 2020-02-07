@@ -10,7 +10,7 @@ pa4: main.o Employee.o Node.o Log.o DB.o
 	g++ -g main.o Employee.o Node.o Log.o DB.o -o pa4
 
 
-main.o: main.cpp Employee.o Node.o DB.o
+main.o: main.cpp Employee.o Node.o Log.o DB.o
 	g++ -g  -c main.cpp 
 Employee.o: Employee.h Employee.cpp
 	g++ -g  -c Employee.cpp
