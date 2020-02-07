@@ -9,12 +9,12 @@
 const static std::string TAG {"Employee"};
 int Employee::size = 0;
 
-Employee::Employee(): code{""}, ssn{""}, first{nullptr}, last{nullptr}, department{""}, 	role{""}, 		salary{0}{
+Employee::Employee(): code{""}, ssn{""}, first{nullptr}, last{nullptr}, department{""}, 	role{""},	salary{0}{
 	std::string mTAG {"Employee()"};
 	Log::m(TAG, mTAG, this);
 }
 
-Employee::Employee(const std::string input){
+Employee::Employee(const std::string &input){
 	std::string mTAG {"Employee(string)"}; 
 	Log::m(TAG, mTAG, this);
 	std::string field;
@@ -33,19 +33,19 @@ int Employee::getEmpSize(){
 
 }
 
-std::ostream& operator<<(std::ostream& os, const Employee& employee) {
-    os 
-	<< std::setw(8) << std::left << employee.getCode()
-	<< std::setw(15) << std::left <<  employee.getSSN() 
-	<< std::setw(18) << std::left << employee.getFirst()
-	<< std::setw(18) << std::left << employee.getLast()
-	<< std::setw(16) << std::left << employee.getDept()
-	<< std::setw(19) << std::left << employee.getRole()
-	<< std::setw(9) << std::right << employee.getSalary()
-	<< std::endl;
+// std::ostream& operator<<(std::ostream& os, const Employee& employee) {
+//     os 
+// 	<< std::setw(8) << std::left << employee.getCode()
+// 	<< std::setw(15) << std::left <<  employee.getSSN() 
+// 	<< std::setw(18) << std::left << employee.getFirst()
+// 	<< std::setw(18) << std::left << employee.getLast()
+// 	<< std::setw(16) << std::left << employee.getDept()
+// 	<< std::setw(19) << std::left << employee.getRole()
+// 	<< std::setw(9) << std::right << employee.getSalary()
+// 	<< std::endl;
 
-    return os;
-}
+//     return os;
+// }
 
 void Employee::display(std::ostream& os)  {
 	 os 
@@ -67,8 +67,6 @@ Employee::~Employee(){
 	delete []last;
 	first = nullptr;
 	last = nullptr;
-
-	
 }
 
 void Employee::parse(int count, std::string field){
@@ -87,13 +85,11 @@ void Employee::parse(int count, std::string field){
 		first = new char[len + 1];
 		strncpy(first, field.c_str(), len);
 		break;
-
 	case 3:
 		len = field.size() + 1;
 		last = new char[len + 1];
 		strncpy(last, field.c_str(), len + 1);
 		break;
-
 	case 4:
 		department = field;
 		break;
@@ -107,13 +103,7 @@ void Employee::parse(int count, std::string field){
 		std::cout << "INVALID_FIELD";
 		break;
 	}
-
-
 }
-
-std::string Employee::getSSN() const { return ssn; }
-void Employee::setSSN(std::string ssn){ this->ssn = ssn; }
-
 
 std::string Employee::getFirst() const { return std::string(first); }
 
@@ -137,6 +127,8 @@ void Employee::setLast(std::string l) {
 	strncpy(first, l.c_str(), len + 1);
 
 }
+std::string Employee::getSSN() const { return ssn; }
+void Employee::setSSN(std::string ssn){ this->ssn = ssn; }
 
 std::string Employee::getCode() const { return code; }
 void Employee::setCode(std::string code){ this->code = code; }
@@ -146,7 +138,6 @@ void Employee::setDept(std::string department){ this->department = department; }
 
 std::string Employee::getRole() const { return role; }
 void Employee::setRole(std::string role){ this->role = role; }
-
 
 double Employee::getSalary() const { return salary; }
 void Employee::setSalary(double salary){ this->salary = salary; }

@@ -16,5 +16,7 @@ public:
 	void insert(const std::string&);
 	void remove();
 	void print(std::ostream&);
+
+	friend class Node;
 };
 #endif
