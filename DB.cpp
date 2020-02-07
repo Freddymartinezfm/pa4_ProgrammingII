@@ -47,10 +47,8 @@ void DB::printHeader(std::ostream & os){
 void DB::remove (){
 	const std::string mTAG {"remove"};
 	// Log::m(TAG, mTAG, this);
-
 	if (!frontNode) return;
 	else {
-
 		if (frontNode->next != nullptr){
 			Node *to_delete = frontNode;
 			frontNode = frontNode->next;
@@ -59,15 +57,9 @@ void DB::remove (){
 			delete to_delete;
 			to_delete = nullptr;
 			size--;
-
 		}
 			
 	}
-
-	
-
-
-
 }
 
 void DB::print(std::ostream& os){
@@ -81,10 +73,6 @@ void DB::print(std::ostream& os){
 	}
 }
 
-
-
-
-
 DB::~DB(){
 	const std::string mTAG {"~DB()"};
 	bool keepGoing = true;
@@ -96,7 +84,4 @@ DB::~DB(){
 		delete to_delete;
 		to_delete = nullptr;
 	} 
-
-	
-
 }
