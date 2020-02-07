@@ -11,12 +11,12 @@ pa4: main.o Employee.o Node.o Log.o DB.o
 
 
 main.o: main.cpp Employee.o Node.o DB.o
-	g++ -g  -c main.cpp DB.cpp
-Employee.o: Employee.h Employee.cpp Node.h
+	g++ -g  -c main.cpp 
+Employee.o: Employee.h Employee.cpp
 	g++ -g  -c Employee.cpp
 Log.o: 	Log.h Log.cpp
 	g++ -g -c Log.cpp
-Node.o: Node.h Node.cpp Employee.h
+Node.o: Node.h Node.cpp
 	g++ -g  -c Node.cpp
 
 

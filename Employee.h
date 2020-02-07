@@ -21,7 +21,7 @@ private:
 	
 public:
 	Employee(); 
-	Employee(const std::string); 
+	Employee(const std::string&); 
 	~Employee();
 	Employee(const Employee&);
 
@@ -50,7 +50,7 @@ public:
 
 
 	void display(std::ostream&) ; //display the information of the employee
-	friend std::ostream& operator<<(std::ostream& os, const Employee& employee);
+	//friend std::ostream& operator<<(std::ostream& os, const Employee& employee);
 };
 
 #endif
