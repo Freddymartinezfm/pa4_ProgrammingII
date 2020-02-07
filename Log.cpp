@@ -11,5 +11,5 @@ void Log::m(std::string TAG, std::string mTAG, std::string message){
 }
 
 void Log::m(std::string TAG, std::string mTAG, void * message){
-	std::cout << std::left << std::setw(10) <<  TAG << ": " << std::setw(15)  << mTAG <<  std::setw(20)  << std::right <<  message  << std::endl;
+	std::cout << std::left << std::setw(15) <<  TAG << ": " << std::setw(20)  << mTAG <<  std::setw(28)  << std::left <<  message  << std::endl;
 }
