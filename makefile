@@ -13,7 +13,7 @@ Employee.o: Employee.h Employee.cpp Node.h
 	g++ -g  -c Employee.cpp
 Log.o: 	Log.h Log.cpp
 	g++ -g -c Log.cpp
-Node.o: Node.h Node.cpp 
+Node.o: Node.h Node.cpp Employee.h
 	g++ -g  -c Node.cpp 
 
 

@@ -6,7 +6,7 @@
 #include<string>
 
 class DB {
-private :
+private:
 	Node *frontNode;
 	int size;
 	void printHeader(std::ostream&);
