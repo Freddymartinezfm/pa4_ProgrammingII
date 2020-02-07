@@ -2,7 +2,6 @@
 #include "Log.h"
 #include <iostream>
 #include <iomanip>
-#include "OnOptionsMenu.h"
 
 const static std::string TAG {"DB"};
 
@@ -21,6 +20,28 @@ void DB::insert(const std::string& entry){
 		frontNode = new Node(entry, this->frontNode);
 	}
 	size++;
+}
+
+void DB::printHeader(std::ostream & os){
+	int headerSize = 103;
+	os <<
+	std::string(headerSize, '-') << std::endl;
+
+	std::cout
+		<< std::setw(8) 
+		<< std::setfill(' ')
+		<< std::left <<  "EmpCode"  
+		<< std::setw(15) <<  "SSN"
+		<< std::setw(18) << "Last"
+		<< std::setw(18) << "First"
+		<< std::setw(16) << "Dept"
+		<< std::setw(19) << "Role"
+		<< std::setw(9) << std::right << "Salary" 
+		<< std::endl;
+
+	std::cout << std::string(headerSize, '-') << std::endl;
+		
+
 }
 
 void DB::remove (){
@@ -52,15 +73,16 @@ void DB::remove (){
 void DB::print(std::ostream& os){
 	bool keepGoing = true;
 	Node *t = frontNode;
-	OnOptionsMenu menu{"PA4", 103};
-	menu.header();
+	printHeader(std::cout);
 	while (frontNode != nullptr && keepGoing){
 		t->emp->display(os);
 		if (t->next == nullptr) keepGoing = false;
 		t = t->next;
 	}
-	menu.line(103);
 }
+
+
+
 
 
 DB::~DB(){
