@@ -1,7 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 #include "Employee.h"
+#include "DB.h"
 
 
 int main(int argc, char** argv){
@@ -19,13 +21,16 @@ int main(int argc, char** argv){
 		Employee *onTheHeap = new Employee();
 
 
+					DB *db = new DB;
 		for (int i =0; i < MAX_CAPACITY; i++) emp[i] = nullptr;
 		int count = 0;
 		if (!inFile.fail()){
 			std::string input;
 			while (std::getline(inFile, input)){
 				if (input != " "){
-					emp[count++] = new Employee(input);
+					db->insert(input);
+					
+					// emp[count++] = new Employee(input);
 				}	
 			}	
 		}
@@ -33,7 +38,8 @@ int main(int argc, char** argv){
 
 		for (int i =0; i < MAX_CAPACITY; i++){
 			std::cout << "size: " << emp[i]->getEmpSize() << " ";
-			emp[i]->display(std::cout);
+			// emp[i]->display(std::cout);
+			db[i].print(std::cout);
 		}
 
 		

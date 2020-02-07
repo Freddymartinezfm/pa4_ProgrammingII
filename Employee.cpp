@@ -33,19 +33,19 @@ int Employee::getEmpSize(){
 
 }
 
-// std::ostream& operator<<(std::ostream& os, const Employee& employee) {
-//     os 
-// 	<< std::setw(8) << std::left << employee.getCode()
-// 	<< std::setw(15) << std::left <<  employee.getSSN() 
-// 	<< std::setw(18) << std::left << employee.getFirst()
-// 	<< std::setw(18) << std::left << employee.getLast()
-// 	<< std::setw(16) << std::left << employee.getDept()
-// 	<< std::setw(19) << std::left << employee.getRole()
-// 	<< std::setw(9) << std::right << employee.getSalary()
-// 	<< std::endl;
+std::ostream& operator<<(std::ostream& os, const Employee& employee) {
+    os 
+	<< std::setw(8) << std::left << employee.getCode()
+	<< std::setw(15) << std::left <<  employee.getSSN() 
+	<< std::setw(18) << std::left << employee.getFirst()
+	<< std::setw(18) << std::left << employee.getLast()
+	<< std::setw(16) << std::left << employee.getDept()
+	<< std::setw(19) << std::left << employee.getRole()
+	<< std::setw(9) << std::right << employee.getSalary()
+	<< std::endl;
 
-//     return os;
-// }
+    return os;
+}
 
 void Employee::display(std::ostream& os)  {
 	 os 

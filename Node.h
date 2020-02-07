@@ -5,11 +5,11 @@
 #include <string>
 #include "Node.h"
 
-class DB;
+class Employee;
 
 class Node {
 private:
-	Node *emp;
+	Employee *emp;
 	Node *next;
 public:
 	Node();
