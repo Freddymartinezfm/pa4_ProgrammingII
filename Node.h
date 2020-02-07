@@ -17,5 +17,4 @@ public:
 	~Node();
 	friend class DB;
 };
-
 #endif

@@ -1,0 +1,6 @@
+*.o
+pa*.exe
+*.docx
+.vscode/launch.json
+.vscode/settings.json
+Sample Output for PA4.pdf
