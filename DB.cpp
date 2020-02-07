@@ -24,7 +24,8 @@ void DB::insert(const std::string& entry){
 
 void DB::remove (){
 	const std::string mTAG {"remove"};
-	Log::m(TAG, mTAG);
+	Log::m(TAG, mTAG, " Called" );
+
 
 	
 

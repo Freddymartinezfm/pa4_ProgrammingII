@@ -8,7 +8,7 @@ static std::string TAG {"Node"};
 
 Node::Node(){
 	const std::string mTAG {"Node"};
-	Log::m(TAG, mTAG);
+	Log::m(TAG, mTAG, " Called");
 	emp = nullptr;
 	next = nullptr;
 }
@@ -25,7 +25,6 @@ Node::~Node(){
 	const std::string mTAG {"~Node()"};
 	Log::m(TAG, mTAG, this);
 	delete emp, next;
-	// delete next;
 	emp = nullptr;
 	emp = nullptr; 
 }
