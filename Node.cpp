@@ -4,17 +4,17 @@
 #include "Log.h"
 #include "Employee.h"
 
-static std::string TAG {"Node"};
+const std::string TAG {"Node"};
 
 Node::Node(){
 	const std::string mTAG {"Node"};
-	Log::m(TAG, mTAG, " Called");
+	Log::m(TAG, mTAG, this);
 	emp = nullptr;
 	next = nullptr;
 }
 
 Node::Node(const std::string & entry, Node *frontNode){
-	std::string mTAG {"Node(string, Node*)"};
+	const std::string mTAG {"Node(string, Node*)"};
 	Log::m(TAG, mTAG, this);
 	emp = new Employee(entry);
 	this->next = frontNode;
@@ -24,9 +24,11 @@ Node::Node(const std::string & entry, Node *frontNode){
 Node::~Node(){
 	const std::string mTAG {"~Node()"};
 	Log::m(TAG, mTAG, this);
-	delete emp, next;
+	delete emp, 
+	delete next;
 	emp = nullptr;
-	emp = nullptr; 
+	next = nullptr;
+	
 }
 
 

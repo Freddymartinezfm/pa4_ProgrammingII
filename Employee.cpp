@@ -65,6 +65,8 @@ Employee::~Employee(){
 	Employee::size--;
 	delete []first;
 	delete []last;
+	first = nullptr;
+	last = nullptr;
 
 	
 }

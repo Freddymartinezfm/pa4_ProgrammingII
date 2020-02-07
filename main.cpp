@@ -29,8 +29,13 @@ int main(int argc, char** argv){
 		inFile.close();
 		db->print(std::cout);
 		db->remove();
+		db->remove();
+		db->remove();
+		db->print(std::cout);
 
-		delete db;
+
+
+		//delete db;
 
 		
 		
