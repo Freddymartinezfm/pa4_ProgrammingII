@@ -22,6 +22,14 @@ void DB::insert(const std::string& entry){
 	size++;
 }
 
+void DB::remove (){
+	const std::string mTAG {"remove"};
+	Log::m(TAG, mTAG);
+
+	
+
+}
+
 void DB::print(std::ostream& os){
 	bool keepGoing = true;
 	Node *t = frontNode;
@@ -35,7 +43,6 @@ void DB::print(std::ostream& os){
 
 DB::~DB(){
 	const std::string mTAG {"~DB()"};
-
 	bool keepGoing = true;
 	Log::m(TAG, mTAG, this);
 	while (frontNode != nullptr && keepGoing){
