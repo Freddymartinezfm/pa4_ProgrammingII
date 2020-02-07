@@ -5,9 +5,6 @@
 #include <ostream>
 #include<string>
 
-
-class DB;
-
 class DB {
 private :
 	Node *frontNode;
