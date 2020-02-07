@@ -2,11 +2,12 @@
 #include "Log.h"
 #include <iostream>
 #include <iomanip>
+#include "OnOptionsMenu.h"
 
-static std::string TAG {"DB"};
+const static std::string TAG {"DB"};
 
 DB::DB(){
-	std::string mTAG {"DB() is called"};
+	const std::string mTAG {"DB()"};
 	Log::m(TAG, mTAG, this);
 	frontNode = nullptr;
 	size = 0;
@@ -24,16 +25,35 @@ void DB::insert(const std::string& entry){
 
 void DB::remove (){
 	const std::string mTAG {"remove"};
-	Log::m(TAG, mTAG, " Called" );
+	// Log::m(TAG, mTAG, this);
 
+	if (!frontNode) return;
+	else {
+
+		if (frontNode->next != nullptr){
+			Node *to_delete = frontNode;
+			frontNode = frontNode->next;
+			Log::m(TAG, mTAG, this);
+			to_delete->next = nullptr;
+			delete to_delete;
+			to_delete = nullptr;
+			size--;
+
+		}
+			
+	}
 
 	
+
+
 
 }
 
 void DB::print(std::ostream& os){
 	bool keepGoing = true;
 	Node *t = frontNode;
+	OnOptionsMenu menu{"PA4", 103};
+	menu.header();
 	while (frontNode != nullptr && keepGoing){
 		t->emp->display(os);
 		if (t->next == nullptr) keepGoing = false;
@@ -49,7 +69,6 @@ DB::~DB(){
 	while (frontNode != nullptr && keepGoing){
 		Node *to_delete = frontNode;
 		if (frontNode->next == nullptr) keepGoing = false;
-		
 		frontNode = frontNode->next;
 		delete to_delete;
 		to_delete = nullptr;
