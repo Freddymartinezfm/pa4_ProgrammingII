@@ -11,12 +11,12 @@ int Employee::size = 0;
 
 Employee::Employee(): code{""}, ssn{""}, first{nullptr}, last{nullptr}, department{""}, 	role{""}, 		salary{0}{
 	std::string mTAG {"Employee()"};
-	Log::m(TAG, mTAG, "Called");
+	Log::m(TAG, mTAG, this);
 }
 
 Employee::Employee(const std::string input){
-	std::string mTAG {"Employee(input)"}; 
-	Log::m(TAG, mTAG, "Called"); 
+	std::string mTAG {"Employee(string)"}; 
+	Log::m(TAG, mTAG, this);
 	std::string field;
 	std::istringstream ss{input};
 
@@ -51,15 +51,12 @@ void Employee::display(std::ostream& os)  {
 	 os 
 	<< std::setw(8) << std::left << getCode()
 	<< std::setw(15) << std::left <<  getSSN() 
-	<< std::setw(18) << std::left << getFirst()
 	<< std::setw(18) << std::left << getLast()
+	<< std::setw(18) << std::left << getFirst()
 	<< std::setw(16) << std::left << getDept()
 	<< std::setw(19) << std::left << getRole()
 	<< std::setw(9) << std::right << getSalary()
 	<< std::endl;
-
-    // return os;
-	// std::cout << *this;
 }
 
 Employee::~Employee(){

@@ -21,7 +21,7 @@ int main(int argc, char** argv){
 		Employee *onTheHeap = new Employee();
 
 
-					DB *db = new DB;
+		DB *db = new DB;
 		for (int i =0; i < MAX_CAPACITY; i++) emp[i] = nullptr;
 		int count = 0;
 		if (!inFile.fail()){

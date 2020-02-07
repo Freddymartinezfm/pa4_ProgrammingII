@@ -7,7 +7,7 @@ class Log {
 public:
 	static void m(std::string, std::string);	
 	static void m(std::string, std::string, std::string);
-	// static void m(std::string TAG, std::string mTAG, Node * message);	
+	static void m(std::string TAG, std::string mTAG, void * message);	
 };
 
 
