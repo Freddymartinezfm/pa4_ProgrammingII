@@ -24,9 +24,12 @@ Node::Node(const std::string & entry, Node *nextNode){
 Node::~Node(){
 	const std::string mTAG {"~Node()"};
 	Log::m(TAG, mTAG, this);
+
 	delete emp;
 	emp = nullptr;
-	// emp = nullptr
+
+
+	
 }
 
 
