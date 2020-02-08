@@ -1,13 +1,13 @@
 TARGET = pa4
 CC = g++
 FLAGS = -g 
-TYPE = w
+TYPE = l
 HEADER = Employee.h Log.h Node.h Log.h DB.h
 OBJ = main.o Employee.o Node.o Log.o DB.o
 CPP = main.cpp Employee.cpp Node.cpp Log.cpp DB.cpp
 
 pa4: main.o Employee.o Node.o Log.o DB.o 
-	g++ -g  main.o Employee.o Node.o Log.o DB.o 
+	g++ -g  main.o Employee.o Node.o Log.o DB.o -o pa4
 
 
 main.o: main.cpp DB.h

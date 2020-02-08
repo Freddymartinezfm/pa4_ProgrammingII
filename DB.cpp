@@ -1,25 +1,28 @@
 #include "DB.h"
+#include "Employee.h"
 #include "Log.h"
 #include <iostream>
 #include <iomanip>
+#include <cassert>
 
 const static std::string TAG {"DB"};
 
 DB::DB(){
 	const std::string mTAG {"DB()"};
 	Log::m(TAG, mTAG, this);
+	
 	frontNode = nullptr;
 	size = 0;
 
 }
 
 void DB::insert(const std::string& entry){
-	if (frontNode == nullptr){
-		frontNode = new Node(entry, this->frontNode); // empty
-		this->frontNode = frontNode;
-	} else {
+	// if (frontNode == nullptr){
+	// 	frontNode = new Node(entry, this->frontNode); // empty
+	// 	//this->frontNode = frontNode;
+	// } else {
 		frontNode = new Node(entry, this->frontNode);
-	}
+	//}
 	size++;
 }
 
@@ -47,20 +50,14 @@ void DB::printHeader(std::ostream & os){
 
 void DB::remove (){
 	const std::string mTAG {"remove"};
-	// Log::m(TAG, mTAG, this);
-	if (!frontNode) return;
-	else {
-		if (frontNode->next != nullptr){
-			Node *to_delete = frontNode;
-			frontNode = frontNode->next;
-			Log::m(TAG, mTAG, this);
-			to_delete->next = nullptr;
-			delete to_delete;
-			to_delete = nullptr;
-			size--;
-		}
-			
-	}
+	Log::m(TAG, mTAG, this);
+	
+	assert(frontNode != nullptr) , "Error";
+	Node *to_delete = frontNode;
+	frontNode = frontNode->next;
+	delete to_delete;
+	// set to_delete to nullptr?
+	size--;
 }
 
 void DB::print(std::ostream& os){
@@ -70,7 +67,7 @@ void DB::print(std::ostream& os){
 	while (frontNode != nullptr && keepGoing){
 		t->emp->display(os);
 		if (t->next == nullptr) keepGoing = false;
-		t = t->next;
+			t = t->next;
 	}
 }
 
