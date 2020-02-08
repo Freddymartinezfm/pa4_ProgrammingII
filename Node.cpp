@@ -28,7 +28,7 @@ Node::~Node(){
 
 	
 	delete emp;
-	emp = nullptr;
+	// emp = nullptr;
 }
 
 

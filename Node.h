@@ -10,7 +10,6 @@ class Employee;
 class Node {
 private:
 	Employee *emp;
-	
 	Node *next;
 public:
 	Node();
