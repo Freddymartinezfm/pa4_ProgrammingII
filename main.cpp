@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include <cstring>
-#include "Employee.h"
 #include "DB.h"
 
 
@@ -16,28 +15,15 @@ int main(int argc, char** argv){
 		if (!inFile.good())
 			std::cerr << "Error opening file " << std::endl;
 
-		DB *db = new DB();
+		DB db = DB();
 		
 		if (!inFile.fail()){
 			std::string input;
 			while (std::getline(inFile, input)){
 				if (input != " "){
-					db->insert(input);
+					db.insert(input);
 				}	
 			}	
 		}
 		inFile.close();
-		db->print(std::cout);
-		db->remove();
-		db->remove();
-		db->remove();
-		db->print(std::cout);
-
-
-
-		delete db;
-
-		
-		
-		
 }

@@ -22,12 +22,14 @@ Node::Node(const std::string & entry, Node *frontNode){
 }
 
 Node::~Node(){
+	std::cout << "destructor started" << std::endl;
 	const std::string mTAG {"~Node()"};
 	Log::m(TAG, mTAG, this);
-	delete emp, 
-	delete next;
-	emp = nullptr;
-	next = nullptr;
+	// delete emp, 
+	// delete next;
+	// emp = nullptr;
+	// next = nullptr;
+
 	
 }
 

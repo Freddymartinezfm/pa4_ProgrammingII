@@ -10,6 +10,7 @@ DB::DB(){
 	Log::m(TAG, mTAG, this);
 	frontNode = nullptr;
 	size = 0;
+
 }
 
 void DB::insert(const std::string& entry){

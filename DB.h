@@ -1,13 +1,15 @@
 #ifndef _DB_H_
 #define _DB_H_
-#include "Node.h"
 #include <iostream>
 #include <ostream>
 #include<string>
 
+#include "Employee.h"
+
 class DB {
 private:
-	Node *frontNode;
+	Node *frontNode; //root
+	
 	int size;
 	void printHeader(std::ostream&);
 public:

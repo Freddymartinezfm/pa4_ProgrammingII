@@ -19,6 +19,7 @@ private:
 	static int size; 
 	void parse(int, std::string); 
 	
+	
 public:
 	Employee(); 
 	Employee(const std::string&); 

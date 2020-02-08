@@ -63,8 +63,8 @@ Employee::~Employee(){
 	std::string mTAG {"~Employee()"}; 
 	Log::m(TAG, mTAG, this);
 	Employee::size--;
-	delete []first;
-	delete []last;
+	delete first;
+	delete last;
 	first = nullptr;
 	last = nullptr;
 }
