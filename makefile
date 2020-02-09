@@ -4,7 +4,7 @@ FLAGS = -g
 TYPE = l
 HEADER = Employee.h Log.h Node.h Log.h DB.h
 OBJ = main.o Employee.o Node.o Log.o DB.o
-CPP = main.cpp Employee.cpp Node.cpp Log.cpp DB.cpp
+CPP = main.cpp Employee.cpp Node.cpp Log.cpp DB.cpp 
 
 $(TARGET): $(OBJ) 
 	$(CC) $(FLAGS)  $(OBJ) -o $(TARGET)
@@ -19,6 +19,7 @@ Node.o: Node.h Node.cpp
 	$(CC) $(FLAGS) -c Node.cpp
 DB.o: DB.cpp DB.h Employee.h
 	$(CC) $(FLAGS) -c DB.cpp
+
 
 
 # add: 

@@ -11,19 +11,12 @@ const int headerSize = 103;
 DB::DB(){
 	const std::string mTAG {"DB()"};
 	Log::m(TAG, mTAG, this);
-	
 	frontNode = nullptr;
 	size = 0;
-
 }
 
 void DB::insert(const std::string& entry){
-	// if (frontNode == nullptr){
-	// 	frontNode = new Node(entry, this->frontNode); // empty
-	// 	//this->frontNode = frontNode;
-	// } else {
-		frontNode = new Node(entry, this->frontNode);
-	//}
+	frontNode = new Node(entry, this->frontNode);
 	size++;
 }
 
