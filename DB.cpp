@@ -6,6 +6,7 @@
 #include <cassert>
 
 const static std::string TAG {"DB"};
+const int headerSize = 103;
 
 DB::DB(){
 	const std::string mTAG {"DB()"};
@@ -27,7 +28,7 @@ void DB::insert(const std::string& entry){
 }
 
 void DB::printHeader(std::ostream & os){
-	int headerSize = 103;
+	
 	os <<
 	std::string(headerSize, '-') << std::endl;
 
@@ -56,7 +57,6 @@ void DB::remove (){
 	Node *to_delete = frontNode;
 	frontNode = frontNode->next;
 	delete to_delete;
-	// set to_delete to nullptr?
 	size--;
 }
 
@@ -69,6 +69,7 @@ void DB::print(std::ostream& os){
 		if (t->next == nullptr) keepGoing = false;
 			t = t->next;
 	}
+	std::cout << std::string(headerSize, '-') << std::endl;
 }
 
 DB::~DB(){
