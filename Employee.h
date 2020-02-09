@@ -24,10 +24,7 @@ public:
 	Employee(); 
 	Employee(const std::string&); 
 	~Employee();
-	Employee(const Employee&);
-
 	static int getEmpSize(); //return the number of all the employee objects
-
 	std::string getFirst() const;
 	void setFirst(std::string);
 

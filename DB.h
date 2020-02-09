@@ -8,18 +8,16 @@
 
 class DB : public Container {
 private:
-	Node *frontNode; //root
-	
+	Node *frontNode;
 	int size;
 	void printHeader(std::ostream&);
+	void printR(std::ostream&, Node *);
 public:
 	DB();
 	~DB();
-	virtual void insert(const std::string&);
+	void insert(const std::string&);
 	void remove();
 	void print(std::ostream&);
-
-	
 	friend class Node;
 };
 #endif
