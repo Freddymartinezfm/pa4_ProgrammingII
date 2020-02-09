@@ -34,6 +34,7 @@ int Employee::getEmpSize(){
 }
 
 void Employee::display(std::ostream& os)  {
+	
 	 os 
 	<< std::setw(8) << std::left << getCode()
 	<< std::setw(15) << std::left <<  getSSN() 
