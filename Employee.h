@@ -48,10 +48,7 @@ public:
 
 	double getSalary() const;
 	void setSalary(double) ;
-
-
 	void display(std::ostream&) ; //display the information of the employee
-	//friend std::ostream& operator<<(std::ostream& os, const Employee& employee);
 };
 
 #endif

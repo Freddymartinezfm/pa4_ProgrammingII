@@ -15,7 +15,11 @@ int main(int argc, char** argv){
 		if (!inFile.good())
 			std::cerr << "Error opening file " << std::endl;
 
+		
+
 		DB db = DB();
+		
+
 		
 		if (!inFile.fail()){
 			std::string input;
@@ -32,5 +36,10 @@ int main(int argc, char** argv){
 		db.remove();
 		db.remove();
 		db.print(std::cout);
+
+
+		std::string test {"dfdf"};
+		db.insert(test);
+
 
 }
