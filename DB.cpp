@@ -77,19 +77,3 @@ DB::~DB(){
 		to_delete = nullptr;
 	} 
 }
-
-
-void DB::searchAndInsert(const std::string& entry){
-	// create node from entry
-	// if list is empty
-		// insert node and set to front
-	// otherwise  while list is not empty 
-		// compare node with first element in list
-				// if data in list is smaller
-					// move to next node and compare until entry is 		larger than or reached the end of list
-				// else if data equals entry
-					// return duplicate 
-				// else  insert entry in between two nodes
-				
-
-}

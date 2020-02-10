@@ -3,7 +3,6 @@
 #include <string>
 #include <cstring>
 #include "DB.h"
-#include "DBManager.h"
 
 
 int main(int argc, char** argv){

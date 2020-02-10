@@ -20,11 +20,6 @@ Node.o: Node.h Node.cpp
 DB.o: DB.cpp DB.h Employee.h
 	$(CC) $(FLAGS) -c DB.cpp
 
-
-
-# add: 
-# git add *.cpp *.h
-
 clean:
 ifeq ($(TYPE), w)
 	del pa4.exe
