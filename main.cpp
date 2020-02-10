@@ -3,6 +3,7 @@
 #include <string>
 #include <cstring>
 #include "DB.h"
+#include "DBManager.h"
 
 
 int main(int argc, char** argv){
@@ -15,6 +16,8 @@ int main(int argc, char** argv){
 			std::cerr << "Error opening file " << std::endl;
 
 		DB db = DB();
+
+
 		
 		if (!inFile.fail()){
 			std::string input;
