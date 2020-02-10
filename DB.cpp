@@ -16,16 +16,12 @@ DB::DB(){
 }
 
 void DB::insert(const std::string& entry){
-	/*
-	*	Pre: The user has created a DB object
-	*	Post: A Employee is added to a the data structure 
-	*	Uses: Node() constructor 
-	*/
 	frontNode = new Node(entry, this->frontNode);
 	size++;
 }
 
 void DB::printHeader(std::ostream & os){
+	
 	os <<
 	std::string(headerSize, '-') << std::endl;
 
@@ -47,11 +43,6 @@ void DB::printHeader(std::ostream & os){
 }
 
 void DB::remove (){
-	/*
-	*	Pre: The user has created a DB object with one or more employees
-	*	Post: The Employee is removed from the data structure, if the data structure is empty, it will simply return 
-	*	Uses: ~Node() destructor 
-	*/
 	const std::string mTAG {"remove()"};
 	Log::m(TAG, mTAG, this);
 	
@@ -63,14 +54,6 @@ void DB::remove (){
 }
 
 void DB::print(std::ostream& os){
-	/*
-	*	Pre: The user has created a DB object with one or more Employees
-	*	Post: The employees are printed to the user in a readable format. If the list is empty it will simply return
-	*	Uses: printHeader() and EMployee::Display() 
-	*	
-	*/
-	
-	
 	bool keepGoing = true;
 	Node *t = frontNode;
 	printHeader(std::cout);
@@ -80,15 +63,6 @@ void DB::print(std::ostream& os){
 			t = t->next;
 	}
 	std::cout << std::string(headerSize, '-') << std::endl;
-	//printR(os, frontNode);
-}
-
-void DB::printR(std::ostream& os, Node* frontNode){
-	Node * t = frontNode;
-	if (frontNode != nullptr){
-		printR(os, t->next);
-		t->emp->display(os);
-	}
 }
 
 DB::~DB(){
