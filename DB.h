@@ -14,7 +14,8 @@ private:
 public:
 	DB();
 	~DB();
-	void insert(const std::string&) ;
+	void insert(const std::string&);
+	void searchAndInsert(const std::string&);
 	void remove();
 	void print(std::ostream&);
 	friend class Node;
